@@ -1,0 +1,6 @@
+requests>=2.32
+openai>=1.85
+
+# test dependencies
+pytest>=8
+responses>=0.26

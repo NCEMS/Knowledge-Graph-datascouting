@@ -13,12 +13,18 @@ dataset accessions across repositories via their associated publications.
   scripts.
 - [`tests/`](tests) — mocked unit tests (default) and live smoke tests
   (`--run-live`) for every client and harvester.
+- [`docs/python-clients-reference.md`](docs/python-clients-reference.md) —
+  detailed reference documentation for every client/script (methods,
+  arguments, gotchas, usage examples).
 - [`docs/plans/`](docs/plans) — implementation plans with the research/API
   verification behind each design decision.
 - [`data/`](data) — the harvested register database and CSV exports (see
   [Harvested results](#harvested-results) below).
 
 ## API clients (`src/python/`)
+
+> See [docs/python-clients-reference.md](docs/python-clients-reference.md)
+> for full method-level documentation of every client and script below.
 
 | Client | Resource | What it does |
 |---|---|---|
@@ -98,16 +104,6 @@ exports ([regenerate with `export_register_csv.py`](src/python/export_register_c
 pip install -r requirements.txt
 ```
 
-## Running tests
-
-```bash
-# Mocked unit tests (default; no network calls)
-pytest
-
-# Include live smoke tests against real APIs
-pytest --run-live
-```
-
 ## Regenerating the harvest
 
 ```bash
@@ -123,7 +119,8 @@ Each harvester script skips accessions already present in the database, so
 re-running any of them (e.g. after an interruption, or periodically to pick
 up newly published studies) only processes what's new.
 
-## Plans
+## Documentation
 
+- [docs/python-clients-reference.md](docs/python-clients-reference.md) — detailed reference for every client and script (methods, arguments, gotchas, usage examples)
 - [docs/plans/metabolomics-clients-implementation-plan.md](docs/plans/metabolomics-clients-implementation-plan.md) — research and design behind the metabolomics clients
 - [docs/plans/article-dataset-index-harvesting-plan.md](docs/plans/article-dataset-index-harvesting-plan.md) — research and design behind the cross-repository linking pipeline
